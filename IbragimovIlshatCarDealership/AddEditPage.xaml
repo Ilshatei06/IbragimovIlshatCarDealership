@@ -1,0 +1,79 @@
+﻿<Page x:Class="IbragimovIlshatCarDealership.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IbragimovIlshatCarDealership"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage" FontFamily="Times New Roman">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Марка:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"></TextBlock>
+        <TextBlock Text="Модель:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"></TextBlock>
+        <TextBlock Text="Цена:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"></TextBlock>
+        <TextBlock Text="VIN:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"></TextBlock>
+        <TextBlock Text="Год:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"></TextBlock>
+        <TextBlock Text="Цвет:" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"></TextBlock>
+        <TextBlock Text="Класс:" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"></TextBlock>
+        <TextBlock Text="Описание:" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" Margin="25 0 0 0"></TextBlock>
+        
+
+        <ComboBox Name="ComboMark" 
+          Grid.Column="1" Grid.Row="0" 
+          Height="30" Width="300" HorizontalAlignment="Left"
+          DisplayMemberPath="MarkName"
+          SelectedValuePath="MarkID"
+          SelectedValue="{Binding MarkID}">
+        </ComboBox>
+        <TextBox Text="{Binding Model}" Grid.Column="1" Grid.Row="1" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding Price}" Grid.Column="1" Grid.Row="2" Height="30" Width="200" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding VIN}" Grid.Column="1" Grid.Row="3" Height="30" Width="200" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding YearProduct}" Grid.Column="1" Grid.Row="4" Height="30" Width="50" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding Color}" Grid.Column="1" Grid.Row="5" Height="30" Width="200" HorizontalAlignment="Left"></TextBox>
+        <ComboBox Name="ComboClass" 
+          Grid.Column="1" Grid.Row="6" 
+          Height="30" Width="300" HorizontalAlignment="Left"
+          DisplayMemberPath="ClassName"
+          SelectedValuePath="ClassID"
+          SelectedValue="{Binding ClassID}">
+        </ComboBox>
+        <TextBox Text="{Binding Description}" Grid.Column="1" Grid.Row="7" Height="200" Width="1200" TextWrapping="Wrap" HorizontalAlignment="Left"></TextBox>
+        
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical" Grid.RowSpan="5" HorizontalAlignment="Right" Margin="10">
+            <TextBlock Text="Фото" Height="20" Width="auto" HorizontalAlignment="Center"></TextBlock>
+            <Image Name="LogoImage" Stretch="UniformToFill" HorizontalAlignment="Center" Height="150" Width="300">
+                <Image.Source>
+                    <Binding Path="Image">
+                        <Binding.TargetNullValue>
+                            <ImageSource>
+                                image/car_noback.png
+                            </ImageSource>
+                        </Binding.TargetNullValue>
+                    </Binding>
+                </Image.Source>
+            </Image>
+            <Button Content="Изменить" Name="ChangePictureBtn" Click="ChangePictureBtn_Click"></Button>
+        </StackPanel>
+
+        <Button Name="SaveButton" Content="Сохранить" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Click="SaveButton_Click"></Button>
+
+    </Grid>
+</Page>

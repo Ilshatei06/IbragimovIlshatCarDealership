@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58850B13-99A5-4435-A8CD-3AEDE23F69AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IbragimovIlshatCarDealership</RootNamespace>
+    <AssemblyName>IbragimovIlshatCarDealership</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Car.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factory.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IbragimovIlshatModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mark.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sale.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Worker.cs">
+      <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="AddEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AddEditPage.xaml.cs">
+      <DependentUpon>AddEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarPage.xaml.cs">
+      <DependentUpon>CarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IbragimovIlshatModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IbragimovIlshatModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IbragimovIlshatModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IbragimovIlshatModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Manager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="IbragimovIlshatModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IbragimovIlshatModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="IbragimovIlshatModel.edmx.diagram">
+      <DependentUpon>IbragimovIlshatModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\car.png" />
+    <Resource Include="image\300.png" />
+    <Resource Include="image\chiron.png" />
+    <Resource Include="image\divo.png" />
+    <Resource Include="image\duster.png" />
+    <Resource Include="image\elantra.png" />
+    <Resource Include="image\emira.png" />
+    <Resource Include="image\evija.png" />
+    <Resource Include="image\forester.png" />
+    <Resource Include="image\impreza.png" />
+    <Resource Include="image\jogger.png" />
+    <Resource Include="image\jolion.png" />
+    <Resource Include="image\outback.png" />
+    <Resource Include="image\poer.png" />
+    <Resource Include="image\rio.png" />
+    <Resource Include="image\santafe.png" />
+    <Resource Include="image\sportage.png" />
+    <Resource Include="image\tucson.png" />
+    <Resource Include="image\modelX.png" />
+    <Resource Include="image\xf.png" />
+    <Resource Include="image\camaro.png" />
+    <Resource Include="image\caposio.png" />
+    <Resource Include="image\discovery.png" />
+    <Resource Include="image\escalade.png" />
+    <Resource Include="image\f-pace.png" />
+    <Resource Include="image\gtr.png" />
+    <Resource Include="image\huracan.png" />
+    <Resource Include="image\li9.png" />
+    <Resource Include="image\miltivan.png" />
+    <Resource Include="image\model3.png" />
+    <Resource Include="image\modelS.png" />
+    <Resource Include="image\mustang.png" />
+    <Resource Include="image\raptor.png" />
+    <Resource Include="image\s60.png" />
+    <Resource Include="image\sandero.png" />
+    <Resource Include="image\sclass.png" />
+    <Resource Include="image\xc90.png" />
+    <Resource Include="image\yukon.png" />
+    <Resource Include="image\3.png" />
+    <Resource Include="image\m5.png" />
+    <Resource Include="image\z4.png" />
+    <Resource Include="image\hunter.png" />
+    <Resource Include="image\granta.png" />
+    <Resource Include="image\vesta.png" />
+    <Resource Include="image\car_noback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IbragimovIlshatModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IbragimovIlshatModel.edmx</DependentUpon>
+      <LastGenOutput>IbragimovIlshatModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IbragimovIlshatModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IbragimovIlshatModel.edmx</DependentUpon>
+      <LastGenOutput>IbragimovIlshatModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
