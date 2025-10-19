@@ -20,12 +20,13 @@ namespace IbragimovIlshatCarDealership
         public static IbragimovCarDealershipDBEntities GetContext()
         {
             if (_content == null)
-            {
-                _content = new IbragimovCarDealershipDBEntities();
-            }
+                _content = (new IbragimovCarDealershipDBEntities());
 
             return _content;
+
         }
+
+
         public IbragimovCarDealershipDBEntities()
             : base("name=IbragimovCarDealershipDBEntities")
         {

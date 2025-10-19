@@ -95,31 +95,31 @@
                             <TextBlock Text=" рублей" FontSize="25"></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal"  Margin="5">
-                            <TextBlock Text="VIN:"></TextBlock>
-                            <TextBlock Text=" "></TextBlock>
-                            <TextBlock Text="{Binding VIN}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal"  Margin="5">
                             <TextBlock Text="Год:"></TextBlock>
                             <TextBlock Text=" "></TextBlock>
                             <TextBlock Text="{Binding YearProduct}"></TextBlock>
                         </StackPanel>
-                        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal"  Margin="5">
+                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal"  Margin="5">
                             <TextBlock Text="Цвет:"></TextBlock>
                             <TextBlock Text=" "></TextBlock>
                             <TextBlock Text="{Binding Color}"></TextBlock>
                         </StackPanel>
-                        <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal"  Margin="5">
+                        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal"  Margin="5">
                             <TextBlock Text="Кузов:"></TextBlock>
                             <TextBlock Text=" "></TextBlock>
                             <TextBlock Text="{Binding ClassString}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal"  Margin="5">
+                            <TextBlock Text="В наличии:"></TextBlock>
+                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="{Binding Count}"></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal"  Margin="5">
                             <TextBlock Text="Описание:"></TextBlock>
                             <TextBlock Text=" "></TextBlock>
                             <TextBlock Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="900"></TextBlock>
                         </StackPanel>
-                        
+                      
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

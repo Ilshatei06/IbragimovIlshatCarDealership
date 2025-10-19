@@ -21,7 +21,6 @@ namespace IbragimovIlshatCarDealership
     
         public int CarID { get; set; }
         public int MarkID { get; set; }
-
         public string MarkString
         {
             get
@@ -29,11 +28,12 @@ namespace IbragimovIlshatCarDealership
                 return Mark.MarkName;
             }
         }
+
+
         public string Model { get; set; }
         public int YearProduct { get; set; }
         public string Color { get; set; }
         public int ClassID { get; set; }
-
         public string ClassString
         {
             get
@@ -41,9 +41,10 @@ namespace IbragimovIlshatCarDealership
                 return Class.ClassName;
             }
         }
+
         public string Description { get; set; }
         public int Price { get; set; }
-        public string VIN { get; set; }
+        public Nullable<int> Count { get; set; }
         public string Image { get; set; }
     
         public virtual ICollection<Sale> Sale { get; set; }

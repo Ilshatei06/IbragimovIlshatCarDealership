@@ -17,7 +17,7 @@
           <Property Name="ClassID" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Price" Type="int" Nullable="false" />
-          <Property Name="VIN" Type="nvarchar" MaxLength="17" Nullable="false" />
+          <Property Name="Count" Type="int" />
           <Property Name="Image" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Class">
@@ -225,7 +225,7 @@
           <Property Name="ClassID" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Int32" Nullable="false" />
-          <Property Name="VIN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Count" Type="Int32" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Sale" Relationship="Self.FK__Sele__CarID__10216507" FromRole="Car" ToRole="Sale" />
           <NavigationProperty Name="Class" Relationship="Self.FK_Car_Class" FromRole="Car" ToRole="Class" />
@@ -447,7 +447,7 @@
                 <ScalarProperty Name="ClassID" ColumnName="ClassID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
