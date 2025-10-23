@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IbragimovIlshatCarDealership"
         mc:Ignorable="d"
-        Title="IbragimovIlshat_CarDealership" MinHeight="750" MinWidth="1350" FontFamily="Times New Roman" Icon="/image/car.png" Background="#8db3c9">
+        Title="IbragimovIlshat_CarDealership" MinHeight="750" MinWidth="1400" FontFamily="Times New Roman" Icon="/image/car.png" Background="#8db3c9">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"></RowDefinition>

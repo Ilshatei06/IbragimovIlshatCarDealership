@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IbragimovIlshatCarDealership"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="1000" 
+      d:DesignHeight="750" d:DesignWidth="1350" 
       Title="CarPage" FontFamily="Times New Roman" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
@@ -22,13 +22,13 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <StackPanel Margin="10" Orientation="Horizontal">
-                <TextBlock Text="Поиск: " TextAlignment="Right" VerticalAlignment="Center" Width="auto" FontSize="20"></TextBlock>
-                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged"  Width="390" Height="30" FontSize="20"></TextBox>
+                <TextBlock Text="Поиск: " TextAlignment="Right" VerticalAlignment="Center" Width="auto"></TextBlock>
+                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged"  Width="275" Height="30"></TextBox>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Диапазон цен: " TextAlignment="Right" VerticalAlignment="Center" Width="auto" FontSize="20"></TextBlock>
-                <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged" Height="30" FontSize="20" Width="310">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Диапазон цен: " TextAlignment="Right" VerticalAlignment="Center" Width="auto"></TextBlock>
+                <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged" Height="30" Width="310">
                     <TextBlock>Все</TextBlock>
                     <TextBlock>до 500 тысяч</TextBlock>
                     <TextBlock>от 500 тысяч до 1 миллиона</TextBlock>
@@ -38,9 +38,13 @@
                 </ComboBox>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical" Margin="5">
-                <RadioButton Content="По возврастанию цены" GroupName="Sort" Width="auto" FontSize="20" Checked="RButtonUp_Checked"  Name="RButtonUp"></RadioButton>
-                <RadioButton Content="По убыванию цены" GroupName="Sort" Width="auto" FontSize="20" Checked="RButtonDown_Checked"  Name="RButtonDown"></RadioButton>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Сортировка:" VerticalAlignment="Center"></TextBlock>
+                <ComboBox Name="cbSort" Height="30" Width="225" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" SelectionChanged="cbSort_SelectionChanged">
+                    <TextBlock>По умолчанию</TextBlock>
+                    <TextBlock>По возврастанию цены</TextBlock>
+                    <TextBlock>По убыванию цены</TextBlock>
+                </ComboBox>
             </StackPanel>
         </StackPanel>
 

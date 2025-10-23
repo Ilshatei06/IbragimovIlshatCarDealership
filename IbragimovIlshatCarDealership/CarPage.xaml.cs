@@ -68,17 +68,12 @@ namespace IbragimovIlshatCarDealership
 
             CarListView.ItemsSource = currentCar.ToList();
 
-
-
-            if (RButtonDown.IsChecked.Value)
-            {
-                currentCar = currentCar.OrderByDescending(p => p.Price).ToList();
-            }
-
-            if (RButtonUp.IsChecked.Value)
-            {
+            if (cbSort.SelectedIndex == 0)
+                currentCar = currentCar.ToList();
+            if (cbSort.SelectedIndex == 1)
                 currentCar = currentCar.OrderBy(p => p.Price).ToList();
-            }
+            if (cbSort.SelectedIndex == 2)
+                currentCar = currentCar.OrderByDescending(p => p.Price).ToList();
 
             CarListView.ItemsSource = currentCar;
 
@@ -96,12 +91,7 @@ namespace IbragimovIlshatCarDealership
             UpdateServices();
         }
 
-        private void RButtonUp_Checked(object sender, RoutedEventArgs e)
-        {
-            UpdateServices();
-        }
-
-        private void RButtonDown_Checked(object sender, RoutedEventArgs e)
+        private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateServices();
         }
@@ -131,10 +121,10 @@ namespace IbragimovIlshatCarDealership
         {
             var currentCar = (sender as Button).DataContext as Car;
 
-            var currentSale = IbragimovCarDealershipDBEntities.GetContext().Sale.ToList();
-            currentSale = currentSale.Where(p => p.CarID == currentCar.CarID).ToList();
+            var Sales = IbragimovCarDealershipDBEntities.GetContext().Sale.ToList();
+            Sales = Sales.Where(p => p.CarID == currentCar.CarID).ToList();
 
-            if (currentSale.Count != 0)
+            if (Sales.Count != 0)
                 MessageBox.Show("Невозможно выполнить удаление, так как существуют продажа");
             else
             {
@@ -156,5 +146,7 @@ namespace IbragimovIlshatCarDealership
                 }
             }
         }
+
+      
     }
 }
