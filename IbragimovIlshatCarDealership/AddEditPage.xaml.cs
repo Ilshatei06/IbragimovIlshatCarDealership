@@ -43,15 +43,15 @@ namespace IbragimovIlshatCarDealership
             var marks = IbragimovCarDealershipDBEntities.GetContext().Mark.ToList();
             ComboMark.ItemsSource = marks;
 
-            if (_currentCar.MarkID > 0)
+            if (SelectedCar != null)
             {
                 ComboMark.SelectedValue = _currentCar.MarkID;
             }
-
+            
             var classes = IbragimovCarDealershipDBEntities.GetContext().Class.ToList();
             ComboClass.ItemsSource = classes;
 
-            if (_currentCar.ClassID > 0)
+            if (SelectedCar != null)
             {
                 ComboClass.SelectedValue = _currentCar.ClassID;
             }
@@ -67,7 +67,9 @@ namespace IbragimovIlshatCarDealership
             if (string.IsNullOrWhiteSpace(_currentCar.Model))
                 errors.AppendLine("Укажите Модель!");
 
-            if (_currentCar.Price <= 0)
+            if(string.IsNullOrWhiteSpace(_currentCar.Price.ToString()))
+                errors.AppendLine("Укажите Цену!");
+            else if (_currentCar.Price <= 0)
                 errors.AppendLine("Укажите положительную Цену!");
 
             if (_currentCar.YearProduct < 1900 || _currentCar.YearProduct >= DateTime.Now.Year + 1)

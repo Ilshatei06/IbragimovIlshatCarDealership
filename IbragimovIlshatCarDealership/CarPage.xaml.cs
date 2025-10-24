@@ -21,6 +21,7 @@ namespace IbragimovIlshatCarDealership
     /// </summary>
     public partial class CarPage : Page
     {
+        int allCountRecord;
         public CarPage()
         {
             InitializeComponent();
@@ -28,8 +29,9 @@ namespace IbragimovIlshatCarDealership
             var currentCar = IbragimovCarDealershipDBEntities.GetContext().Car.ToList();
 
             CarListView.ItemsSource = currentCar;
+           
 
-
+            ComboSort.SelectedIndex = 0;
             ComboType.SelectedIndex = 0;
 
 
@@ -39,6 +41,7 @@ namespace IbragimovIlshatCarDealership
         private void UpdateServices()
         {
             var currentCar = IbragimovCarDealershipDBEntities.GetContext().Car.ToList();
+            allCountRecord = currentCar.Count;
 
             if (ComboType.SelectedIndex == 0)
                 currentCar = currentCar.ToList();
@@ -59,25 +62,44 @@ namespace IbragimovIlshatCarDealership
                 currentCar = currentCar.Where(p => p.Price >= 10000000).ToList();
 
 
-            currentCar = currentCar.Where(p => p.MarkString.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
-                                               p.Model.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
-                                               p.YearProduct.ToString().Contains(TBoxSearch.Text.ToLower()) ||
-                                               p.Color.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
-                                               p.ClassString.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            //currentCar = currentCar.Where(p => p.MarkString.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
+            //                                   p.Model.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
+            //                                   p.YearProduct.ToString().Contains(TBoxSearch.Text.ToLower()) ||
+            //                                   p.Color.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
+            //                                   p.ClassString.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
+            var searchText = TBoxSearch.Text.ToLower();
+            string[] searchWords = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (searchWords.Length == 0)
+                CarListView.ItemsSource = currentCar.ToList();
+            else
+            {
+                currentCar = currentCar.Where(p => searchWords.All(word =>
+                                                        p.MarkString.ToLower().Contains(word) ||
+                                                        p.Model.ToLower().Contains(word) ||
+                                                        p.Price.ToString().ToLower().Contains(word) ||
+                                                        p.YearProduct.ToString().Contains(word) ||
+                                                        p.Color.ToLower().Contains(word) ||
+                                                        p.ClassString.ToLower().Contains(word) ||
+                                                        p.Count.ToString().ToLower().Contains(word) ||
+                                                        (p.Description ?? "").ToLower().Contains(word))).ToList();
+
+                CarListView.ItemsSource = currentCar.ToList();
+            }
 
             CarListView.ItemsSource = currentCar.ToList();
 
-            if (cbSort.SelectedIndex == 0)
+            if (ComboSort.SelectedIndex == 0)
                 currentCar = currentCar.ToList();
-            if (cbSort.SelectedIndex == 1)
+            if (ComboSort.SelectedIndex == 1)
                 currentCar = currentCar.OrderBy(p => p.Price).ToList();
-            if (cbSort.SelectedIndex == 2)
+            if (ComboSort.SelectedIndex == 2)
                 currentCar = currentCar.OrderByDescending(p => p.Price).ToList();
 
             CarListView.ItemsSource = currentCar;
 
-            tbCount.Text = "Количество записей: " + currentCar.Count.ToString();
+            tbCount.Text = "Количество записей: " + currentCar.Count.ToString() + " из " + allCountRecord;
         }
 
 
@@ -91,7 +113,7 @@ namespace IbragimovIlshatCarDealership
             UpdateServices();
         }
 
-        private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateServices();
         }

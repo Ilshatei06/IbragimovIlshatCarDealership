@@ -40,7 +40,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Сортировка:" VerticalAlignment="Center"></TextBlock>
-                <ComboBox Name="cbSort" Height="30" Width="225" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" SelectionChanged="cbSort_SelectionChanged">
+                <ComboBox Name="ComboSort" Height="30" Width="225" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" SelectionChanged="ComboSort_SelectionChanged">
                     <TextBlock>По умолчанию</TextBlock>
                     <TextBlock>По возврастанию цены</TextBlock>
                     <TextBlock>По убыванию цены</TextBlock>
