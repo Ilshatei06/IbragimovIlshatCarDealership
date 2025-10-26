@@ -71,13 +71,26 @@
     <Compile Include="Client.cs">
       <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClientWindow.xaml.cs">
+      <DependentUpon>ClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Factory.cs">
       <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IbragimovIlshatModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IbragimovIlshatModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="IbragimovIlshatModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IbragimovIlshatModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IbragimovIlshatModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Mark.cs">
       <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
@@ -88,6 +101,9 @@
     <Compile Include="Sale.cs">
       <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SalePage.xaml.cs">
+      <DependentUpon>SalePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Worker.cs">
       <DependentUpon>IbragimovIlshatModel.tt</DependentUpon>
     </Compile>
@@ -96,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,20 +133,14 @@
     <Compile Include="CarPage.xaml.cs">
       <DependentUpon>CarPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IbragimovIlshatModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IbragimovIlshatModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IbragimovIlshatModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IbragimovIlshatModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SalePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.cs" />

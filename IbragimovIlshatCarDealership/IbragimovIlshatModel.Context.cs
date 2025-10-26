@@ -15,6 +15,7 @@ namespace IbragimovIlshatCarDealership
     
     public partial class IbragimovCarDealershipDBEntities : DbContext
     {
+
         public static IbragimovCarDealershipDBEntities _content;
 
         public static IbragimovCarDealershipDBEntities GetContext()
@@ -25,7 +26,6 @@ namespace IbragimovIlshatCarDealership
             return _content;
 
         }
-
 
         public IbragimovCarDealershipDBEntities()
             : base("name=IbragimovCarDealershipDBEntities")

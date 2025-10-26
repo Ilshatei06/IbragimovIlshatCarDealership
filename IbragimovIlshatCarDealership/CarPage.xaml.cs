@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace IbragimovIlshatCarDealership
 {
-    /// <summary>
-    /// Логика взаимодействия для CarPage.xaml
-    /// </summary>
+
     public partial class CarPage : Page
     {
         int allCountRecord;
@@ -60,13 +58,6 @@ namespace IbragimovIlshatCarDealership
 
             if (ComboType.SelectedIndex == 5)
                 currentCar = currentCar.Where(p => p.Price >= 10000000).ToList();
-
-
-            //currentCar = currentCar.Where(p => p.MarkString.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
-            //                                   p.Model.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
-            //                                   p.YearProduct.ToString().Contains(TBoxSearch.Text.ToLower()) ||
-            //                                   p.Color.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
-            //                                   p.ClassString.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
             var searchText = TBoxSearch.Text.ToLower();
             string[] searchWords = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -138,7 +129,11 @@ namespace IbragimovIlshatCarDealership
         {
             Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Car));
         }
-
+        private void btnSale_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new SalePage((sender as Button).DataContext as Car));
+        }
+        
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             var currentCar = (sender as Button).DataContext as Car;
@@ -169,6 +164,5 @@ namespace IbragimovIlshatCarDealership
             }
         }
 
-      
     }
 }

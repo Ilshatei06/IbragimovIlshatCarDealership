@@ -11,14 +11,16 @@ namespace IbragimovIlshatCarDealership
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+    using System.Windows.Media;
+
     public partial class Car
     {
         public Car()
         {
             this.Sale = new HashSet<Sale>();
         }
-    
+
         public int CarID { get; set; }
         public int MarkID { get; set; }
         public string MarkString
@@ -46,7 +48,17 @@ namespace IbragimovIlshatCarDealership
         public int Price { get; set; }
         public Nullable<int> Count { get; set; }
         public string Image { get; set; }
-    
+
+        public SolidColorBrush FontStyle
+        {
+            get
+            {
+                if (Count == 0)
+                    return (SolidColorBrush)new BrushConverter().ConvertFromString("#ab1515");
+                else
+                    return (SolidColorBrush)new BrushConverter().ConvertFromString("#FFFFFF");
+            }
+        }
         public virtual ICollection<Sale> Sale { get; set; }
         public virtual Class Class { get; set; }
         public virtual Mark Mark { get; set; }

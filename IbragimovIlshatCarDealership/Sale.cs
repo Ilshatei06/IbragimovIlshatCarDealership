@@ -16,8 +16,26 @@ namespace IbragimovIlshatCarDealership
     {
         public int SaleID { get; set; }
         public int WorkerID { get; set; }
+
+        public string WorkerFullName
+        {
+            get
+            {
+                return Worker.Surname + " " + Worker.Name + " " + Worker.Patronymic;
+            }
+
+        }
+        public string ClientFullName
+        {
+            get
+            {
+                return Client.Surname + " " + Client.Name + " " + Client.Patronymic;
+            }
+
+        }
         public System.DateTime Date { get; set; }
         public int CarID { get; set; }
+        public string CarVIN { get; set; }
         public int ClientID { get; set; }
     
         public virtual Car Car { get; set; }

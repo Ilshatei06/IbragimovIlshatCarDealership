@@ -23,9 +23,7 @@ using System.Xaml;
 
 namespace IbragimovIlshatCarDealership
 {
-    /// <summary>
-    /// Логика взаимодействия для AddEditPage.xaml
-    /// </summary>
+
     public partial class AddEditPage : Page
     {
         private Car _currentCar = new Car();
@@ -56,7 +54,6 @@ namespace IbragimovIlshatCarDealership
                 ComboClass.SelectedValue = _currentCar.ClassID;
             }
         }
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
@@ -81,7 +78,7 @@ namespace IbragimovIlshatCarDealership
             if (ComboClass.SelectedItem == null)
                 errors.AppendLine("Выберите Кузов!");
 
-            if (string.IsNullOrWhiteSpace(_currentCar.Count.ToString()) || _currentCar.Count <= 0)
+            if (string.IsNullOrWhiteSpace(_currentCar.Count.ToString()) || _currentCar.Count < 0)
                 errors.AppendLine("Укажите положительное Наличие!");
 
             if (errors.Length > 0)
@@ -114,7 +111,7 @@ namespace IbragimovIlshatCarDealership
                 }
             }
             else
-                MessageBox.Show("Уже существует похожий тип авто!");
+                MessageBox.Show("Уже существует похожая конфигурация!");
         }
 
         private void ChangePictureBtn_Click(object sender, RoutedEventArgs e)

@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dd776bd8e4e34175899da6ffc611ee18" Name="Diagram1">
+      <Diagram DiagramId="046d9b81190c4669b81e3a73039218ed" Name="Diagram1">
         <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Car" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Class" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Client" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Factory" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Mark" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Post" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Sale" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Sale" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="IbragimovCarDealershipDBModel.Worker" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
         <AssociationConnector Association="IbragimovCarDealershipDBModel.FK__Sele__CarID__10216507" ManuallyRouted="false" />
         <AssociationConnector Association="IbragimovCarDealershipDBModel.FK_Car_Class" ManuallyRouted="false" />

@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Image Source="/image/car_noback.png" HorizontalAlignment="Left" Margin="5 0 0 0"></Image>
-        <TextBlock Text="ЧестАвто" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></TextBlock>
+        <TextBlock Text="Автосалон" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"></TextBlock>
         <Button Content="Назад" Name="btnBack" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click"></Button>
 
         <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" Background="White"></Frame>

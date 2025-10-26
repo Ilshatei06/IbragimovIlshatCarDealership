@@ -73,6 +73,7 @@
           <Property Name="WorkerID" Type="int" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
           <Property Name="CarID" Type="int" Nullable="false" />
+          <Property Name="CarVIN" Type="nvarchar" MaxLength="17" Nullable="false" />
           <Property Name="ClientID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Worker">
@@ -290,6 +291,7 @@
           <Property Name="WorkerID" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="CarID" Type="Int32" Nullable="false" />
+          <Property Name="CarVIN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ClientID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Car" Relationship="Self.FK__Sele__CarID__10216507" FromRole="Sale" ToRole="Car" />
           <NavigationProperty Name="Client" Relationship="Self.FK__Sele__ClientID__11158940" FromRole="Sale" ToRole="Client" />
@@ -509,6 +511,7 @@
                 <ScalarProperty Name="WorkerID" ColumnName="WorkerID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="CarID" ColumnName="CarID" />
+                <ScalarProperty Name="CarVIN" ColumnName="CarVIN" />
                 <ScalarProperty Name="ClientID" ColumnName="ClientID" />
               </MappingFragment>
             </EntityTypeMapping>

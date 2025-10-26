@@ -11,21 +11,23 @@ namespace IbragimovIlshatCarDealership
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Worker
     {
         public Worker()
         {
             this.Sale = new HashSet<Sale>();
         }
-    
+
         public int WorkerID { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
+
+        public string WorkerFullName => $"{Surname} {Name} {Patronymic}";
         public int WorkRecord { get; set; }
         public int PostID { get; set; }
-    
+
         public virtual Post Post { get; set; }
         public virtual ICollection<Sale> Sale { get; set; }
     }
