@@ -33,7 +33,7 @@
         <TextBox Text="{Binding Surname}" Grid.Column="1" Grid.Row="0" Height="30" Width="350" HorizontalAlignment="Left"></TextBox>
         <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="1" Height="30" Width="350" HorizontalAlignment="Left"></TextBox>
         <TextBox Text="{Binding Patronymic}" Grid.Column="1" Grid.Row="2" Height="30" Width="350" HorizontalAlignment="Left"></TextBox>
-        <TextBox Text="{Binding Passport}" Grid.Column="1" Grid.Row="3" Height="30" Width="150" HorizontalAlignment="Left" MaxLength="10"></TextBox>
+        <TextBox Text="{Binding Passport}" Grid.Column="1" Grid.Row="3" Height="30" Width="110" HorizontalAlignment="Left" MaxLength="10"></TextBox>
         <TextBox Text="{Binding Adress}" Grid.Column="1" Grid.Row="4" Height="30" Width="555" HorizontalAlignment="Left"></TextBox>
         <TextBox Text="{Binding Age}" Grid.Column="1" Grid.Row="5" Height="30" Width="50" HorizontalAlignment="Left"></TextBox>
         <ComboBox Name="ComboGender" Grid.Column="1" Grid.Row="6" Height="30" Width="225" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">

@@ -60,7 +60,7 @@ namespace IbragimovIlshatCarDealership
             if (string.IsNullOrWhiteSpace(tbVIN.Text))
                 errors.AppendLine("Укажите VIN!");
             else if (tbVIN.Text.Length != 17)
-                errors.AppendLine("Укажите VIN верно! Должно быть 17 символов");
+                errors.AppendLine("Укажите VIN верно! Он может содержать латинские буквы и цифры (кроме I,O,Q,0,1)");
 
             if (errors.Length > 0)
             {
@@ -99,6 +99,29 @@ namespace IbragimovIlshatCarDealership
             }
         }
 
+
+        private void tbVIN_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            foreach (char c in e.Text)
+            {
+                if (!IsValidVINChar(char.ToUpper(c)))
+                {
+                    e.Handled = true; 
+                    return;
+                }
+            }
+        }
+
+        private bool IsValidVINChar(char c)
+        {
+            if (c == ' ') return false;
+            if (c >= '2' && c <= '9') return true;
+            if (c >= 'A' && c <= 'Z') return c != 'I' && c != 'O' && c != 'Q';
+          
+            return false;
+        }
+
+
         private void addClient_Click(object sender, RoutedEventArgs e)
         {
             ClientWindow clientWindow = new ClientWindow();
@@ -126,6 +149,7 @@ namespace IbragimovIlshatCarDealership
                     if (sale != null)
                     {
                         IbragimovCarDealershipDBEntities.GetContext().Sale.Remove(sale);
+                        _currentCar.Count += 1;
                         Car car = IbragimovCarDealershipDBEntities.GetContext().Car.FirstOrDefault(p => p.CarID == sale.CarID);
                         IbragimovCarDealershipDBEntities.GetContext().SaveChanges();
                         UpdateSaleListView();

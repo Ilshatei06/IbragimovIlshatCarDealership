@@ -95,7 +95,7 @@ namespace IbragimovIlshatCarDealership
                                                                                        p.CarID != _currentCar.CarID).ToList();
 
 
-            if (allCars.Count == 0)
+            if (allCars.Count() == 0)
             {
                 if (_currentCar.CarID == 0)
                     IbragimovCarDealershipDBEntities.GetContext().Car.Add(_currentCar);

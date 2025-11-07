@@ -66,7 +66,7 @@
             <TextBlock Text="₽"></TextBlock>
         </StackPanel>
 
-        <TextBox Name="tbVIN" Text="{Binding CarVIN}" Grid.Column="1" Grid.Row="4" Height="30" Width="180" HorizontalAlignment="Left"  Margin="3 0 0 0" MaxLength="17" CharacterCasing="Upper"></TextBox>
+        <TextBox Name="tbVIN" Text="{Binding CarVIN}" Grid.Column="1" Grid.Row="4" Height="30" Width="225" HorizontalAlignment="Left"  Margin="3 0 0 0" MaxLength="17" CharacterCasing="Upper" PreviewTextInput="tbVIN_PreviewTextInput"></TextBox>
 
         <ListView Name="CarSaleListView" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Margin="25 0 25 10">
             <ListView.ItemTemplate>

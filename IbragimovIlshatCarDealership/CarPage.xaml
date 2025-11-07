@@ -94,34 +94,28 @@
                         <Button Name="btnDelete" Content="Удалить" Click="btnDelete_Click"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Margin="5 5 25 0"></Button>
                         <Button Name="btnSale" Content="Продажа" Click="btnSale_Click"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" Margin="5 5 25 0"></Button>
                         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"  Margin="5 0 0 5">
-                            <TextBlock Text="Цена:" FontSize="25"></TextBlock>
-                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="Цена: " FontSize="25"></TextBlock>
                             <TextBlock Text="{Binding Price}" FontSize="25"></TextBlock>
                             <TextBlock Text=" рублей" FontSize="25"></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal"  Margin="5">
-                            <TextBlock Text="Год:"></TextBlock>
-                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="Год: "></TextBlock>
                             <TextBlock Text="{Binding YearProduct}"></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal"  Margin="5">
-                            <TextBlock Text="Цвет:"></TextBlock>
-                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="Цвет: "></TextBlock>
                             <TextBlock Text="{Binding Color}"></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal"  Margin="5">
-                            <TextBlock Text="Кузов:"></TextBlock>
-                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="Кузов: "></TextBlock>
                             <TextBlock Text="{Binding ClassString}"></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal"  Margin="5">
-                            <TextBlock Text="В наличии:"></TextBlock>
-                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="В наличии: "></TextBlock>
                             <TextBlock Text="{Binding Count}"></TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal"  Margin="5">
-                            <TextBlock Text="Описание:"></TextBlock>
-                            <TextBlock Text=" "></TextBlock>
+                            <TextBlock Text="Описание: "></TextBlock>
                             <TextBlock Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="900"></TextBlock>
                         </StackPanel>
                       

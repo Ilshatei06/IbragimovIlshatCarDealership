@@ -81,8 +81,8 @@ namespace IbragimovIlshatCarDealership
 
             CarListView.ItemsSource = currentCar.ToList();
 
-            if (ComboSort.SelectedIndex == 0)
-                currentCar = currentCar.ToList();
+            //if (ComboSort.SelectedIndex == 0)
+            //    currentCar = currentCar.ToList();
             if (ComboSort.SelectedIndex == 1)
                 currentCar = currentCar.OrderBy(p => p.Price).ToList();
             if (ComboSort.SelectedIndex == 2)
